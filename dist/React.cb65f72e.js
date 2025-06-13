@@ -675,28 +675,556 @@ $parcel$ReactRefreshHelpers$4931.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "parent"
-}, /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "child"
-}, [
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "Hi im an H1 tag"),
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {}, "im h2 btw, Himashu her")
-]));
+//jsx is not html in js
+// const jsxheading = <h1> my name is himanshu in jsx</h1>
+//Component Composition
+// const HeaderComponent = (
+//     <div id="title">
+//         <h1 className="heading">my name is Himanshu in comp </h1>
+//         <h2 className="heading">my name is Himanshu in comp </h2>
+//         <h3 className="heading">my name is Himanshu in comp </h3>
+//     </div>
+// );
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "logo-img",
+                src: "https://imgs.search.brave.com/o4zMqbG18tJ40fXAaoPdXec-6E0mtWSPoLPmf5BvTsY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL1IvcmVzdGF1/cmFudC1jaGllZi1m/b29kLWhvdGVsLWxv/Z28tOURFOUQwMzgx/Mi1zZWVrbG9nby5j/b20ucG5n"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 23,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 28,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 29,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 30,
+                            columnNumber: 25
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 31,
+                            columnNumber: 25
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "App.js",
+                    lineNumber: 27,
+                    columnNumber: 21
+                }, undefined)
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 26,
+                columnNumber: 17
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 22,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Header;
+const ResCard = (props)=>{
+    const { resData } = props;
+    const { name, description, rating, deliveryTime, img } = resData;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "res-logo",
+                alt: "res-logo",
+                src: img
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 45,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: name
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 48,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: description
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 49,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: "rating-badge",
+                children: [
+                    rating,
+                    " stars"
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 50,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    deliveryTime,
+                    " mins"
+                ]
+            }, void 0, true, {
+                fileName: "App.js",
+                lineNumber: 51,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 44,
+        columnNumber: 9
+    }, undefined);
+};
+_c1 = ResCard;
+const resList = [
+    {
+        "id": 1,
+        "name": "The Spice Route",
+        "description": "Authentic Indian flavors with a modern twist.",
+        "rating": 4.6,
+        "deliveryTime": 30,
+        "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+    },
+    {
+        "id": 2,
+        "name": "Burger Bliss",
+        "description": "Juicy gourmet burgers with hand-cut fries.",
+        "rating": 4.2,
+        "deliveryTime": 25,
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349"
+    },
+    {
+        "id": 3,
+        "name": "Sushi Zen",
+        "description": "Fresh sushi rolls and sashimi delivered daily.",
+        "rating": 4.8,
+        "deliveryTime": 40,
+        "img": "https://images.unsplash.com/photo-1553621042-f6e147245754"
+    },
+    {
+        "id": 4,
+        "name": "Pasta Parade",
+        "description": "Homemade pasta and Italian comfort food.",
+        "rating": 4.4,
+        "deliveryTime": 35,
+        "img": "https://images.unsplash.com/photo-1589308078053-0f4e8b0a6d4b"
+    },
+    {
+        "id": 5,
+        "name": "Vegan Vibes",
+        "description": "100% plant-based meals bursting with flavor.",
+        "rating": 4.7,
+        "deliveryTime": 28,
+        "img": "https://images.unsplash.com/photo-1542444459-db1a7b6b2c2d"
+    },
+    {
+        "id": 6,
+        "name": "Tandoori Tikka",
+        "description": "Grilled tandoori delicacies and spicy curries.",
+        "rating": 4.5,
+        "deliveryTime": 32,
+        "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
+    },
+    {
+        "id": 7,
+        "name": "Wok This Way",
+        "description": "Stir-fried Asian street food, fast and fresh.",
+        "rating": 4.3,
+        "deliveryTime": 22,
+        "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
+    },
+    {
+        "id": 8,
+        "name": "Crust & Crumb",
+        "description": "Artisan pizzas with handcrafted dough and toppings.",
+        "rating": 4.1,
+        "deliveryTime": 27,
+        "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
+    },
+    {
+        "id": 9,
+        "name": "Chai Junction",
+        "description": "India's favorite tea spot with snacks and bites.",
+        "rating": 4.0,
+        "deliveryTime": 15,
+        "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
+    },
+    {
+        "id": 10,
+        "name": "Hearty Bowls",
+        "description": "Wholesome rice, salad, and noodle bowls.",
+        "rating": 4.3,
+        "deliveryTime": 20,
+        "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
+    }
+];
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                    type: "text",
+                    placeholder: "Got a 3am craving?..",
+                    className: "search-input"
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 146,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 145,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
+                children: resList.map((res)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ResCard, {
+                        resData: res
+                    }, res.id, false, {
+                        fileName: "App.js",
+                        lineNumber: 154,
+                        columnNumber: 40
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 153,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 144,
+        columnNumber: 9
+    }, undefined);
+};
+_c2 = Body;
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
+        className: "footer",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "footer-content",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                    children: "Made with \u2764\uFE0F by Himanshu"
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 163,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: "\xa9 2023 All rights reserved"
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 164,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "App.js",
+            lineNumber: 162,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 161,
+        columnNumber: 9
+    }, undefined);
+};
+_c3 = Footer;
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 174,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 175,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 176,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 173,
+        columnNumber: 9
+    }, undefined);
+};
+_c4 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-console.log(parent);
-root.render(parent);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 182,
+    columnNumber: 13
+}, undefined));
+var _c, _c1, _c2, _c3, _c4;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "ResCard");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "AppLayout");
 
   $parcel$ReactRefreshHelpers$4931.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"jMk1U","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jMk1U":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
+'use strict';
+module.exports = require("ee51401569654d91");
+
+},{"ee51401569654d91":"gnlQf"}],"gnlQf":[function(require,module,exports,__globalThis) {
+/**
+ * @license React
+ * react-jsx-dev-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    function getComponentNameFromType(type) {
+        if (null == type) return null;
+        if ("function" === typeof type) return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+        if ("string" === typeof type) return type;
+        switch(type){
+            case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+            case REACT_PROFILER_TYPE:
+                return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+                return "Activity";
+        }
+        if ("object" === typeof type) switch("number" === typeof type.tag && console.error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), type.$$typeof){
+            case REACT_PORTAL_TYPE:
+                return "Portal";
+            case REACT_CONTEXT_TYPE:
+                return (type.displayName || "Context") + ".Provider";
+            case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+            case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+            case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+            case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                    return getComponentNameFromType(type(innerType));
+                } catch (x) {}
+        }
+        return null;
+    }
+    function testStringCoercion(value) {
+        return "" + value;
+    }
+    function checkKeyStringCoercion(value) {
+        try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = !1;
+        } catch (e) {
+            JSCompiler_inline_result = !0;
+        }
+        if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(JSCompiler_inline_result, "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.", JSCompiler_inline_result$jscomp$0);
+            return testStringCoercion(value);
+        }
+    }
+    function getTaskName(type) {
+        if (type === REACT_FRAGMENT_TYPE) return "<>";
+        if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE) return "<...>";
+        try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+        } catch (x) {
+            return "<...>";
+        }
+    }
+    function getOwner() {
+        var dispatcher = ReactSharedInternals.A;
+        return null === dispatcher ? null : dispatcher.getOwner();
+    }
+    function UnknownOwner() {
+        return Error("react-stack-top-frame");
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning) return !1;
+        }
+        return void 0 !== config.key;
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = !0, console.error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)", displayName));
+        }
+        warnAboutAccessingKey.isReactWarning = !0;
+        Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: !0
+        });
+    }
+    function elementRefGetterWithDeprecationWarning() {
+        var componentName = getComponentNameFromType(this.type);
+        didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = !0, console.error("Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."));
+        componentName = this.props.ref;
+        return void 0 !== componentName ? componentName : null;
+    }
+    function ReactElement(type, key, self, source, owner, props, debugStack, debugTask) {
+        self = props.ref;
+        type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type: type,
+            key: key,
+            props: props,
+            _owner: owner
+        };
+        null !== (void 0 !== self ? self : null) ? Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            get: elementRefGetterWithDeprecationWarning
+        }) : Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            value: null
+        });
+        type._store = {};
+        Object.defineProperty(type._store, "validated", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: 0
+        });
+        Object.defineProperty(type, "_debugInfo", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: null
+        });
+        Object.defineProperty(type, "_debugStack", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugStack
+        });
+        Object.defineProperty(type, "_debugTask", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugTask
+        });
+        Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+        return type;
+    }
+    function jsxDEVImpl(type, config, maybeKey, isStaticChildren, source, self, debugStack, debugTask) {
+        var children = config.children;
+        if (void 0 !== children) {
+            if (isStaticChildren) {
+                if (isArrayImpl(children)) {
+                    for(isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++)validateChildKeys(children[isStaticChildren]);
+                    Object.freeze && Object.freeze(children);
+                } else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+            } else validateChildKeys(children);
+        }
+        if (hasOwnProperty.call(config, "key")) {
+            children = getComponentNameFromType(type);
+            var keys = Object.keys(config).filter(function(k) {
+                return "key" !== k;
+            });
+            isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
+            didWarnAboutKeySpread[children + isStaticChildren] || (keys = 0 < keys.length ? "{" + keys.join(": ..., ") + ": ...}" : "{}", console.error('A props object containing a "key" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />', isStaticChildren, children, keys, children), didWarnAboutKeySpread[children + isStaticChildren] = !0);
+        }
+        children = null;
+        void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
+        hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+        if ("key" in config) {
+            maybeKey = {};
+            for(var propName in config)"key" !== propName && (maybeKey[propName] = config[propName]);
+        } else maybeKey = config;
+        children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+        return ReactElement(type, children, self, source, getOwner(), maybeKey, debugStack, debugTask);
+    }
+    function validateChildKeys(node) {
+        "object" === typeof node && null !== node && node.$$typeof === REACT_ELEMENT_TYPE && node._store && (node._store.validated = 1);
+    }
+    var React = require("58362d9d82be395f"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler");
+    Symbol.for("react.provider");
+    var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        return null;
+    };
+    React = {
+        "react-stack-bottom-frame": function(callStackForError) {
+            return callStackForError();
+        }
+    };
+    var specialPropKeyWarningShown;
+    var didWarnAboutElementRef = {};
+    var unknownOwnerDebugStack = React["react-stack-bottom-frame"].bind(React, UnknownOwner)();
+    var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+    var didWarnAboutKeySpread = {};
+    exports.Fragment = REACT_FRAGMENT_TYPE;
+    exports.jsxDEV = function(type, config, maybeKey, isStaticChildren, source, self) {
+        var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+        return jsxDEVImpl(type, config, maybeKey, isStaticChildren, source, self, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+    };
+})();
+
+},{"58362d9d82be395f":"jMk1U"}],"jMk1U":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("a569817e6ea559f6");
 
