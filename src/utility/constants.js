@@ -80,3 +80,5 @@ export const resList =[
     "img": "https://images.unsplash.com/photo-1604908177521-3e8b2b1d6a1a"
   }
 ]
+
+export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.6360606&lng=86.11792360000001&restaurantId=";
