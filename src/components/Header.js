@@ -15,7 +15,7 @@ const Header = () => {
 
 
     return (
-        <div className="flex items-center justify-between  p-8  shadow-xl  sticky top-0 h-[75px] rounded-md bg-gray-50 ">
+        <div className="flex items-center justify-between  p-8  shadow-xl  sticky z-10 top-0 h-[75px] rounded-md bg-gray-50 ">
             <div className="flex items-center justify-center p-2 gap-4">
                 <img 
                 className="w-15 h-15 rounded-full"
@@ -24,13 +24,13 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <div className="no-link style">
-                    <ul className="flex items-center justify-center space-x-4 font-sans font-medium ">
+                    <ul className="flex items-center justify-center space-x-4 font-sans font-medium">
                         <li className="link-hover"><Link to="/">Home</Link></li>
                         <li className="link-hover"><Link to="/about">About Us</Link></li>
                         <li className="link-hover"><Link to= "/contact">Contact Us</Link></li>
                         <li className="link-hover"><Link to ="/cart">Cart</Link></li>
                         <li className="link-hover"><Link to ="/Grocery">Grocery</Link></li>
-                        <button className="bg-green-600 px-6 py-2 text-amber-50 font-bold rounded-lg cursor-pointer transition duration-300 hover:bg-green-700" onClick={handleLogin}>{isLoggedIn}</button>
+                        <button className="bg-green-600 px-6 py-2 w-25 text-amber-50 font-semibold rounded-lg cursor-pointer transition duration-300 hover:bg-green-700" onClick={handleLogin}>{isLoggedIn}</button>
                     </ul>
                  </div>
             </div>

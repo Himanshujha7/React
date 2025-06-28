@@ -1,14 +1,19 @@
-import ResCard from "./ResCard";
+import ResCard, {withPromotedLabel} from "./ResCard";
 import { useState, useEffect } from "react";
 import {Shimmer} from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utility/useOnlineStatus";
+import { IoSearch } from "react-icons/io5";
 
 const Body = () => {
     //state variable
     //for this we use hooks
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
+
+    const PromotedResCard = withPromotedLabel(ResCard);
+
+    
 
     const [query, setQuery] =useState("");
 
@@ -26,6 +31,8 @@ const Body = () => {
 
         const rest = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
+        console.log(rest);
+
         const formattedRestaurants = rest.map((res) => ({
             id: res.info.id,
             name: res.info.name,
@@ -33,6 +40,8 @@ const Body = () => {
             cuisines: res.info.cuisines.join(", "),
             rating: res.info.avgRating,
             deliveryTime: res.info.sla?.deliveryTime,
+            costForTwo : res.info.costForTwo,
+            open : res.info.aggregatedDiscountInfoV3?.header,
         }));
         setListOfRestaurants(formattedRestaurants);
         setFilteredList(formattedRestaurants);
@@ -46,9 +55,10 @@ const Body = () => {
 
     
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
-        <div className="flex flex-col gap-10 items-center justify-center">
+        <div className="flex flex-col gap-10 justify-center">
             <div className="flex items-center justify-center">
                 <div className="flex m-8 p-4 gap-4">
+                    
                     <input
                         type="text"
                         placeholder="Got a 3am craving?.."
@@ -56,26 +66,27 @@ const Body = () => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    <button className="bg-gray-700 px-4 py-1 text-amber-50 font-bold rounded-xl cursor-pointer shadow-2xl transition duration-00 hover:bg-gray-600 " onClick={() =>{
+                    <button className="bg-gray-700 px-4 py-1 text-amber-50 font-semibold flex items-center gap-2 rounded-xl cursor-pointer shadow-2xl transition duration-00 hover:bg-gray-600 " onClick={() =>{
                         const filterquery = listOfRestaurants.filter(
                         (res) => res.name.toLowerCase().includes(query.toLowerCase())
                         );
                         setFilteredList(filterquery);
-                        }}>Search
+                        }}>Search <IoSearch className="text-lg" />
                     </button>
                 </div>
-                <div className="flex m-4 px-10">
+                
+            </div>
+            <div className="flex justify-end items-start px-4 py-2 ">
                     <button className="bg-orange-400 px-4 py-2 text-amber-50 font-medium rounded-xl cursor-pointer shadow-xl transition duration-200 hover:bg-orange-300" onClick={() => {
                     const filteredList = listOfRestaurants.filter(
                     (res) => res.rating >=4.5
                     ); setListOfRestaurants(filteredList)}}>Top Rated Restaurants </button>
-                </div>
             </div>
-
-            <div className="m-8 p-8 flex flex-wrap">
+            <div className="m-4 p-8 flex flex-wrap">
                 {filteredList.map((res) => (
                     <Link to={"/restaurant/" + res.id } key ={res.id} className="no-link-style">
-                        <ResCard resData={res}/>
+
+                        {res.open ? (<PromotedResCard resData={res} />) : (<ResCard resData={res}/>)}
                     </Link>
                 ))}
             </div>

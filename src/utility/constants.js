@@ -81,4 +81,6 @@ export const resList =[
   }
 ]
 
+export const imageUrl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
+
 export const MENU_API_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.6360606&lng=86.11792360000001&restaurantId=";
