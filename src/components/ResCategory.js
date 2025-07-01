@@ -1,15 +1,28 @@
-import { IoIosArrowDown } from "react-icons/io";
-const ResCategory = ({data}) => {
-    console.log(data);
 
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import ItemList from "./ItemList";
+import { useState } from "react";
+const ResCategory = ({data}) => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleToggle =() => {
+        setIsActive(!isActive);
+    }
+    console.log(data);
   return (
-    <div className="flex flex-col gap-10 items-center justify-center">
-        <div className="flex justify-between w-full mx-auto my-4 bg-white px-4 gap-10 p-5 ">
-            <span className="font-bold text-lg">
-                {data.title}
-                ({data.itemCards.length})
-            </span>
-            <span ><IoIosArrowDown size={25}/></span>
+    <div>
+        <div className="flex flex-col gap-10 items-center justify-center bg-white">
+            <button onClick={handleToggle}  className="flex justify-between w-full mx-auto my-4 bg-white px-4 gap-10 p-5 ">
+                <span className="font-bold text-2xl" >
+                    {data.title}
+                    ({data.itemCards.length})
+                </span>
+                {isActive? <FaChevronUp className="text-gray-500 text-2xl" /> : <FaChevronDown className="text-gray-500 text-2xl" />}
+            </button>
+            <div >
+                {isActive && 
+                    <ItemList items={data.itemCards}/>}
+            </div>
         </div>
     </div>
   )
