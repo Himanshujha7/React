@@ -1,9 +1,13 @@
 import { IoStar } from "react-icons/io5";
+import UserContext from "../utility/UserContext";
+import { useContext } from "react";
+
 
 const ResCard = (props) => {
     const {resData} = props;
     const {name, image, cuisines, rating, deliveryTime, costForTwo,} = resData;
 
+    const {loggedInUser} = useContext(UserContext);
 
     return (
         <div className="m-4 p-4 gap-2 w-[300px] rounded-lg shadow-md border border-slate-100 transition duration-300 hover:border-slate-300 hover:bg-gray-100">
@@ -17,6 +21,7 @@ const ResCard = (props) => {
             </div> 
             <h4 className="font-sans py-2 text-slate-600 text-sm">{cuisines}</h4> 
             <h4 className="font-medium py-2 text-slate-600">{costForTwo}</h4> 
+            <h4 className="font-medium py-2 text-slate-600">{loggedInUser}</h4> 
             
             
 

@@ -1,9 +1,11 @@
 import ResCard, {withPromotedLabel} from "./ResCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext} from "react";
 import {Shimmer} from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utility/useOnlineStatus";
 import { IoSearch } from "react-icons/io5";
+import UserContext from "../utility/UserContext";
+
 
 const Body = () => {
     //state variable
@@ -21,6 +23,8 @@ const Body = () => {
         fetchData();
         },[]
     );
+
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     const fetchData = async () => {
         const data= await fetch(
@@ -76,12 +80,18 @@ const Body = () => {
                 </div>
                 
             </div>
-            <div className="flex justify-end items-start px-4 py-2 ">
+            <div className="flex justify-between ">
+                <div className="flex justify-end items-start px-4 py-2 ">
                     <button className="bg-orange-400 px-4 py-2 text-amber-50 font-medium rounded-xl cursor-pointer shadow-xl transition duration-200 hover:bg-orange-300" onClick={() => {
                     const filteredList = listOfRestaurants.filter(
                     (res) => res.rating >=4.5
                     ); setListOfRestaurants(filteredList)}}>Top Rated Restaurants </button>
+                </div>
+                <div className="flex justify-end items-start px-4 py-2 ">
+                        <input value={loggedInUser} onChange={(e) => setUserName(e.target.value)} placeholder="Enter Username" className="p-2 border border-slate-400 rounded-xl shadow-lg"/>
+                </div>
             </div>
+
             <div className="m-4 p-8 flex flex-wrap">
                 {filteredList.map((res) => (
                     <Link to={"/restaurant/" + res.id } key ={res.id} className="no-link-style">

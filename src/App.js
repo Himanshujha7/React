@@ -1,4 +1,4 @@
-import React, { lazy , Suspense} from "react";
+import React, { lazy , Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -10,6 +10,7 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Shimmer } from "./components/Shimmer";
+import UserContext from "./utility/UserContext";
 //jsx is not html in js
 // const jsxheading = <h1> my name is himanshu in jsx</h1>
 
@@ -32,12 +33,25 @@ const Grocery = lazy(() => import("./components/Grocery") );
 
 
 const AppLayout = () => {
+
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    const data ={ 
+      name: "Himanshu",
+    };
+    setUserName(data.name);
+  },[])
     return (
+      <UserContext.Provider value={{loggedInUser:userName, setUserName}}>
         <div className="app">
+          <UserContext.Provider value={{loggedInUser:"Jha"}}>
             <Header/>
-            <Outlet/>
-            <Footer/>
+          </UserContext.Provider>  
+          <Outlet/>
+          <Footer/>
         </div>
+      </UserContext.Provider>
     )
 }
 

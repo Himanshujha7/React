@@ -1,5 +1,6 @@
-import { useState , useEffect, use} from "react";
+import { useState , useContext} from "react";
 import { Link } from "react-router";
+import UserContext from "../utility/UserContext";
 
 const Header = () => {
     const btnName = "Login";
@@ -9,9 +10,9 @@ const Header = () => {
         setIsLoggedIn(isLoggedIn === btnName ? "Logout" : btnName); 
     }
 
-    useEffect(() => {
-        console.log("useEffect called");
-    });
+    const {loggedInUser}= useContext(UserContext);
+    console.log(loggedInUser);
+
 
 
     return (
@@ -30,7 +31,7 @@ const Header = () => {
                         <li className="link-hover"><Link to= "/contact">Contact Us</Link></li>
                         <li className="link-hover"><Link to ="/cart">Cart</Link></li>
                         <li className="link-hover"><Link to ="/Grocery">Grocery</Link></li>
-                        <button className="bg-green-600 px-6 py-2 w-25 text-amber-50 font-semibold rounded-lg cursor-pointer transition duration-300 hover:bg-green-700" onClick={handleLogin}>{isLoggedIn}</button>
+                        <button className="bg-green-600 px-6 py-2 w-25 text-amber-50 font-semibold rounded-lg cursor-pointer transition duration-300 hover:bg-green-700" onClick={handleLogin}>{isLoggedIn!= btnName?loggedInUser:isLoggedIn}</button>
                     </ul>
                  </div>
             </div>
