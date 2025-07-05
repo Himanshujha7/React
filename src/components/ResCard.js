@@ -21,7 +21,6 @@ const ResCard = (props) => {
             </div> 
             <h4 className="font-sans py-2 text-slate-600 text-sm">{cuisines}</h4> 
             <h4 className="font-medium py-2 text-slate-600">{costForTwo}</h4> 
-            <h4 className="font-medium py-2 text-slate-600">{loggedInUser}</h4> 
             
             
 
