@@ -11,20 +11,8 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Shimmer } from "./components/Shimmer";
 import UserContext from "./utility/UserContext";
-//jsx is not html in js
-// const jsxheading = <h1> my name is himanshu in jsx</h1>
-
-//Component Composition
-
-// const HeaderComponent = (
-//     <div id="title">
-//         <h1 className="heading">my name is Himanshu in comp </h1>
-//         <h2 className="heading">my name is Himanshu in comp </h2>
-//         <h3 className="heading">my name is Himanshu in comp </h3>
-//     </div>
-// );
-
-
+import {Provider} from "react-redux";
+import appStore from "./utility/appStore";
 
 
 const Grocery = lazy(() => import("./components/Grocery") );
@@ -43,13 +31,18 @@ const AppLayout = () => {
     setUserName(data.name);
   },[])
     return (
+      <Provider store={appStore}>
       <UserContext.Provider value={{loggedInUser:userName, setUserName}}>
+
         <div className="app">
             <Header/>  
           <Outlet/>
           <Footer/>
         </div>
+
       </UserContext.Provider>
+
+      </Provider>
     )
 }
 

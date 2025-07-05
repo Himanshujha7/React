@@ -20,7 +20,6 @@
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-duration: initial;
-      --tw-ease: initial;
     }
   }
 }
@@ -59,7 +58,6 @@
     --color-gray-600: oklch(44.6% .03 256.802);
     --color-gray-700: oklch(37.3% .034 259.733);
     --color-gray-900: oklch(21% .034 264.665);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
     --text-sm: .875rem;
@@ -83,7 +81,6 @@
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
-    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-sans);
@@ -362,14 +359,6 @@
     top: calc(var(--spacing) * 0);
   }
 
-  .top-10 {
-    top: calc(var(--spacing) * 10);
-  }
-
-  .right-0 {
-    right: calc(var(--spacing) * 0);
-  }
-
   .z-10 {
     z-index: 10;
   }
@@ -390,16 +379,8 @@
     margin: calc(var(--spacing) * 8);
   }
 
-  .mx-auto {
-    margin-inline: auto;
-  }
-
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
-  }
-
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
   }
 
   .flex {
@@ -418,16 +399,8 @@
     height: 150px;
   }
 
-  .h-\[200px\] {
-    height: 200px;
-  }
-
   .h-\[300px\] {
     height: 300px;
-  }
-
-  .max-h-0 {
-    max-height: calc(var(--spacing) * 0);
   }
 
   .w-1\/2 {
@@ -436,10 +409,6 @@
 
   .w-3\/12 {
     width: 25%;
-  }
-
-  .w-4\/12 {
-    width: 33.3333%;
   }
 
   .w-9\/12 {
@@ -466,24 +435,8 @@
     width: 150px;
   }
 
-  .w-\[200px\] {
-    width: 200px;
-  }
-
   .w-\[300px\] {
     width: 300px;
-  }
-
-  .w-\[400px\] {
-    width: 400px;
-  }
-
-  .w-\[500px\] {
-    width: 500px;
-  }
-
-  .w-\[600px\] {
-    width: 600px;
   }
 
   .w-full {
@@ -512,10 +465,6 @@
 
   .items-start {
     align-items: flex-start;
-  }
-
-  .items-stretch {
-    align-items: stretch;
   }
 
   .justify-between {
@@ -564,10 +513,6 @@
 
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
   }
 
   .rounded-2xl {
@@ -778,10 +723,6 @@
     color: var(--color-amber-50);
   }
 
-  .text-black {
-    color: var(--color-black);
-  }
-
   .text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -830,10 +771,6 @@
     color: var(--color-slate-800);
   }
 
-  .text-white {
-    color: var(--color-white);
-  }
-
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, #00000040);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -860,18 +797,6 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
 
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .transition-transform {
-    transition-property: transform, translate, scale, rotate;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
   .duration-200 {
     --tw-duration: .2s;
     transition-duration: .2s;
@@ -880,16 +805,6 @@
   .duration-300 {
     --tw-duration: .3s;
     transition-duration: .3s;
-  }
-
-  .duration-500 {
-    --tw-duration: .5s;
-    transition-duration: .5s;
-  }
-
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
   }
 
   .placeholder\:text-slate-400 {
@@ -918,14 +833,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-600);
-      }
-    }
-  }
-
-  .hover\:bg-green-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-green-500);
       }
     }
   }
@@ -1081,11 +988,6 @@
 }
 
 @property --tw-duration {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-ease {
   syntax: "*";
   inherits: false
 }
