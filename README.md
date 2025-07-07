@@ -22,4 +22,7 @@
 - Slice (cartSlice)
 - dispatch action and use reducer
 - read data via selector
+ 
 
+# redux devtools
+- Devtools to debug, and manage redux stores.

@@ -9,16 +9,17 @@ const cartSlice = createSlice({
         addItem:(state, action) => {
             state.items.push(action.payload);
         },
-        removeitem:(state)=>{
+        removeItem:(state)=>{
             state.items.pop();
         },
-        clearcart:(state) =>{
-            state.items.length = 0;
+        clearCart:(state) =>{
+            state.items.length = 0; // mutate kr rha hai state reference ko 
+            // or we can something like return { items:[]} that instead of mutating, returns a new state
         }
     }
 })
 
-export const { addItem, removeitem, clearcart}=cartSlice.actions;
+export const { addItem, removeitem, clearCart}=cartSlice.actions;
 
 export default cartSlice.reducer;
 

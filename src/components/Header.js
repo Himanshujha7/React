@@ -1,6 +1,8 @@
 import { useState , useContext} from "react";
 import { Link } from "react-router";
 import UserContext from "../utility/UserContext";
+import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const btnName = "Login";
@@ -11,8 +13,9 @@ const Header = () => {
     }
 
     const {loggedInUser}= useContext(UserContext);
-    console.log(loggedInUser);
 
+    //subscribing to the store using a Selector
+    const cartItems = useSelector((store) => store.cart.items);
 
 
     return (
@@ -29,7 +32,15 @@ const Header = () => {
                         <li className="link-hover"><Link to="/">Home</Link></li>
                         <li className="link-hover"><Link to="/about">About Us</Link></li>
                         <li className="link-hover"><Link to= "/contact">Contact Us</Link></li>
-                        <li className="link-hover"><Link to ="/cart">Cart</Link></li>
+                        
+                        <li className="link-hover"><Link to ="/cart">
+                        <div className="flex items-center ">
+                            Cart <FaShoppingCart />
+                            {cartItems.length>0 && <span className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold bg-orange-500 text-white">{cartItems.length}</span>}
+                            
+                        </div>
+                        </Link></li>
+                        
                         <li className="link-hover"><Link to ="/Grocery">Grocery</Link></li>
                         <button className="bg-green-600 px-6 py-2 w-25 text-amber-50 font-semibold rounded-lg cursor-pointer transition duration-300 hover:bg-green-700" onClick={handleLogin}>{isLoggedIn!= btnName?loggedInUser:isLoggedIn}</button>
                     </ul>

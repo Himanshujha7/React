@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
 import { imageUrl } from "../utility/constants";
+import { addItem } from "../utility/cartSlice";
 
 const ItemList = ({items}) => {
-    console.log(items);
+
+    const dispatch = useDispatch();
+
+    const handleAddItem =(item) => {
+        //dispatch an action here
+        dispatch(addItem(item))
+        
+    }
+    
 
     return <div>
             {items.map((item) => (
@@ -24,7 +34,7 @@ const ItemList = ({items}) => {
                         </div>
                         <div className="w-3/12 flex flex-col items-center justify-center">
                             <img className="w-[150px] h-[150px]" src={imageUrl + item.card.info.imageId}  />
-                            <button className=" border border-green-500 text-green-500 hover:text-white font-semibold px-4 py-1 rounded-lg shadow-md hover:bg-green-600 transition duration-300 w-full">Add + </button>
+                            <button onClick={() => handleAddItem(item)} className=" border border-green-500 text-green-500 hover:text-white font-semibold px-4 py-1 rounded-lg shadow-md hover:bg-green-600 transition duration-300 w-full">Add + </button>
                         </div> 
                     </div>
                 </div>
