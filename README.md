@@ -48,4 +48,17 @@
  - install react testing lib by npm i -D @testing-library/react
  - installed jest
  - installed babel dependencies
- 
+ - config babel.config.js
+ - parcel uses babel behind the scene
+- config parcel config in .parcelrc to disable default babel transpilation
+- jest config by npm init jest@latest
+- now install jsdom library
+- npm install save-enviroment-jsdom
+
+
+# Test files
+- any file names like header.test.js is a test file
+- any ifle normally inside folder is test file
+- header.test.js
+- header.spec.js
+- __ is kknow as dunder
