@@ -26,3 +26,26 @@
 
 # redux devtools
 - Devtools to debug, and manage redux stores.
+- gives us a actions, state, trace and test cases for reducers
+- logs the monitor
+
+
+# Testing types
+
+- Unit testing /
+- testing a single unit of code
+
+- integration testing /
+- integration of features is tested by developing a flow of tests
+
+- end to end testing - e2e testing 
+- end to testing of user flow
+
+- manual testing 
+- manual testing in site and features
+
+ # setting up testing in our app
+ - install react testing lib by npm i -D @testing-library/react
+ - installed jest
+ - installed babel dependencies
+ 
