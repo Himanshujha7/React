@@ -1,13 +1,13 @@
 import { sum } from '../sum'; // Import the sum function from the sum.js file
 
-test("Sum should cal the sum of two numbers", () => {
+test("Sum should call the sum of two numbers", () => {
     const result = sum(3, 4);
     expect(result).toBe(7);
 });
 
 test("Sum should handle negative numbers", () => {
     const result = sum(-2, -5);
-    expect(result).toBe(-7);
+    expect(result).toBe(-7); // not a mandatory thing
 });
 
 test("Sum should handle zero", () => {

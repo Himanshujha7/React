@@ -20,12 +20,15 @@
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "babel-jest": "^30.0.4",
     "jest": "^30.0.4",
     "parcel": "^2.15.2"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.27.1",
+    "@lottiefiles/dotlottie-react": "^0.14.3",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/postcss": "^4.1.10",
     "jest-environment-jsdom": "^30.0.4",

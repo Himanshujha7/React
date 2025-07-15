@@ -54,6 +54,11 @@
 - jest config by npm init jest@latest
 - now install jsdom library
 - npm install save-enviroment-jsdom
+- install @babel/preset-react - to make jsx work in test cases
+- include @babel/preset-react - inside my babel config
+
+- install @testing-library/jest-dom
+
 
 
 # Test files
